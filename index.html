@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"/>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="./main.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yh's portfolio</title>
+</head>
+<body>
+
+    <p>안녕하세요~! 저는 송연희라고 합니다!</p>
+    <div class="tab">
+        <ul class="tabnav">
+          <li><a href="#tab01">탭1</a></li>
+          <li><a href="#tab02">탭2</a></li>
+          <li><a href="#tab02">탭2</a></li>
+          <li><a href="#tab02">탭2</a></li>
+          <li><a href="#tab02">탭2</a></li>
+          <li><a href="#tab02">탭2</a></li>
+        </ul>
+        <div class="tabcontent">
+          <div id="tab01">tab1 content</div>
+          <div id="tab02">tab2 content</div>
+        </div>
+      </div><!--tab-->
+</body>
+<script>
+    $(function(){
+  $('.tabcontent > div').hide();
+  $('.tabnav a').click(function () {
+    $('.tabcontent > div').hide().filter(this.hash).fadeIn();
+    $('.tabnav a').removeClass('active');
+    $(this).addClass('active');
+    return false;
+  }).filter(':eq(0)').click();
+  });
+</script>
+</html>
