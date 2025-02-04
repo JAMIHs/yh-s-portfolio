@@ -1,43 +1,120 @@
 html, body {
-    min-height: 100vh;
     max-width: 1440px;
     margin: 0 auto;
     min-height: 100%;
-    font-family: "Noto Serif KR", serif;
+    font-family: "Nanum Gothic", serif;
+    font-weight: bold;
+    font-style: normal;
 }
   
-h1{text-align: center; padding: 50px 0; font-weight: 500; font-size: 1.5rem;}
-.tab{float:left; width:100%; height:100%;}
-.tabnav{font-size:0; width:100%;  display: flex;}
-.tabnav li{ height:46px; text-align:center;  width: 30%;}
+h1 {
+    text-align: center;
+    padding: 35px 0;
+    font-weight: bolder;
+    font-size: 1.7rem;
+    width: 1440px;
+    position: fixed;
+    z-index: 0;
+    background-color: #fff;
+}
+.tab{float:left; width:100%; height:100%; padding-top: 5%;}
+.tabnav{
+    font-size: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.tabnav li{ height:60px; }
+.menudiv { width: 100%; height: 100%; display: flex; flex-direction: column; position: fixed; z-index: 2;}
+.menu{width: 20%; padding : 1%;}
+.menubutton:hover {
+    cursor: pointer;
+}
+.menubutton{
+    z-index: 3; 
+}
+.close{display: flex; }
 .tabnav li a:before{content:""; position:absolute; left:0; top:0px; width:100%; height:3px; }
-.tabnav li a{ position:relative; display:block; color: #000; padding:0 30px; line-height:46px; text-decoration:none; font-size:16px;}
+.tabnav li a{ position:relative; display:block; color: #000; padding:0 30px; line-height:46px; text-decoration:none; font-size:20px;}
 .tabnav li a:hover {transition: all 0.5s; background-color: #fff7d8; border-radius: 30px;}
 .tabnav li a.active{background-color: #fff7d8; border-radius: 30px;}
+.menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 2;
+    width: 7%;
+}
+
+.menu.active {
+    opacity: 1;
+    visibility: visible;
+    background: rgba(255,255,255,0.7);
+}
+
+.tabcover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1;
+}
+.tabcover.active {
+    opacity: 1;
+    visibility: visible;
+    background: rgba(115, 115, 115,0.5);
+    backdrop-filter: blur(5px);
+}
+.closebutton {height: 100px; border-radius: 50px; width: 100px; }
 .tabcontent{padding: 20px; height:100%; border-top:none;}
 img {height: 100%; width: 31%; padding: 10px; float: right;}
-.tab01_img {padding: 50px; border-bottom:solid 1px #ddd }
-#tab02,#tab03,#tab04,#tab05,#tab06 {
+#tab1,#tab02,#tab03,#tab04,#tab05,#tab06,#tab07,#tab08,#tab09,#tab10 {
     display: flex;
     flex-wrap: wrap; 
     justify-content: center; 
+    height: auto;
 }
-#tab02 img, #tab03 img, #tab04 img, #tab05 img, #tab06 img {
-    height: auto; 
+#tab1 img, #tab02 img, #tab03 img, #tab04 img, #tab05 img, #tab06 img {
     margin: 10px; 
+}
+#tab01 img {
+    width: 440px; 
 }
 #tab02 img {
     width: 400px; 
+    height: fit-content;
 }
 #tab03 img {
-    width: 900px; 
+    width: 410px; 
 }
 #tab04 img {
     width: 500px; 
 }
 #tab05 img {
-    width: 600px; 
+    width: 400px; 
+    height: fit-content;
 }
 #tab06 img {
     width: 1308px;; 
+}
+#tab07 img {
+    width: 700px; 
+}
+#tab08 img {
+    width: 700px; 
+}
+#tab09 img {
+    width: 700px; 
+}
+#tab10 img {
+    width: 500px; 
+}
+.ss{
+    display: flex;
+    flex-direction: column;
+    width: 32%;
 }
