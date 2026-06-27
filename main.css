@@ -25,7 +25,73 @@ h1 {
     flex-direction: column;
 }
 .tabnav li{ height:60px; }
-.menudiv { width: 100%; height: 100%; display: flex; flex-direction: column; position: fixed; z-index: 2;}
+.menudiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.close {
+    width: 170px;
+    height: 100px;
+}
+
+.menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 11;
+    width: 120px;
+}
+
+.tabcover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.tabcover.active {
+    opacity: 1;
+    visibility: visible;
+    background: rgba(115, 115, 115, 0.5);
+    backdrop-filter: blur(5px);
+    pointer-events: auto;
+}
+
+.tabcontent {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    height: 100%;
+    border-top: none;
+}
+
+#tab11 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+#tab11 video {
+    width: 300px;
+    height: 533px;
+    object-fit: cover;
+    background: #333;
+}
+
 .menu{width: 20%; padding : 1%;}
 .menubutton:hover {
     cursor: pointer;
@@ -35,7 +101,7 @@ h1 {
 }
 .close{display: flex; }
 .tabnav li a:before{content:""; position:absolute; left:0; top:0px; width:100%; height:3px; }
-.tabnav li a{ position:relative; display:block; color: #000; line-height:46px; text-decoration:none; font-size:20px; text-align: center;}
+.tabnav li a{ position:relative; display:block; color: #000; padding:0 15px; line-height:46px; text-decoration:none; font-size:20px;}
 .tabnav li a:hover {transition: all 0.5s; background-color: #fff7d8; border-radius: 30px;}
 .tabnav li a.active{background-color: #fff7d8; border-radius: 30px;}
 .menu {
@@ -72,7 +138,7 @@ h1 {
 .closebutton {height: 100px; border-radius: 50px; width: 100px; }
 .tabcontent{padding: 20px; height:100%; border-top:none;}
 img {height: 100%; width: 31%; padding: 10px; float: right;}
-#tab1,#tab02,#tab03,#tab04,#tab05,#tab06,#tab07,#tab08,#tab09,#tab10,#tab11 {
+#tab1,#tab02,#tab03,#tab04,#tab05,#tab06,#tab07,#tab08,#tab09,#tab10 {
     display: flex;
     flex-wrap: wrap; 
     justify-content: center; 
@@ -117,11 +183,4 @@ img {height: 100%; width: 31%; padding: 10px; float: right;}
     display: flex;
     flex-direction: column;
     width: 32%;
-}
-
-video {
-  width: 300px;
-  height: auto;
-  display: block;
-  margin: 10px auto;
 }
