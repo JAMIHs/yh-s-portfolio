@@ -72,7 +72,7 @@ h1 {
 .closebutton {height: 100px; border-radius: 50px; width: 100px; }
 .tabcontent{padding: 20px; height:100%; border-top:none;}
 img {height: 100%; width: 31%; padding: 10px; float: right;}
-#tab1,#tab02,#tab03,#tab04,#tab05,#tab06,#tab07,#tab08,#tab09,#tab10 {
+#tab1,#tab02,#tab03,#tab04,#tab05,#tab06,#tab07,#tab08,#tab09,#tab10,#tab11 {
     display: flex;
     flex-wrap: wrap; 
     justify-content: center; 
@@ -117,4 +117,11 @@ img {height: 100%; width: 31%; padding: 10px; float: right;}
     display: flex;
     flex-direction: column;
     width: 32%;
+}
+
+video {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
 }
